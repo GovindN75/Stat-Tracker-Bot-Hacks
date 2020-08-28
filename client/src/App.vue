@@ -37,13 +37,6 @@
     list-style: none;
   }
 
-  .container {
-    max-width: 960px;
-    margin: 1rem auto;
-    overflow: auto;
-    padding: 0 2rem;
-  }
-
   .form-group {
     margin: 1rem 0;
   }
