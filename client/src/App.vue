@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="./assets/ow.png" style="width: 50px; height: 50px;" />
-      </a>
-    </nav>
+    <Header />
   </div>
 </template>
 <script>
+  import Header from "./components/Header";
   export default {
     name: "app",
+    components: {
+      Header,
+    },
   };
 </script>
 <style></style>
