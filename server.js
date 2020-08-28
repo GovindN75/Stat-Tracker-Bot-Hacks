@@ -9,8 +9,17 @@ const app = express();
 // Profile routes
 app.use("/api/v1/profile", require("./routes/route"));
 
+// Handle production
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static(__dirname + "/public/"));
+
+  // Handle SPA
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
+}
+
 const port = process.env.PORT || 8000;
-//OMG ITS WORKING
+
 app.listen(port, () => {
   console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`);
 });
