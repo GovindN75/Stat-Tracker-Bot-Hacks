@@ -1,5 +1,11 @@
 <template>
-  <div id="#app"></div>
+  <div id="#app">
+    <div v-if="profileData">
+        <h1>
+            {{profileData.platformInfo.platformUserID}}
+        </h1>
+    </div>
+  </div>
 </template>
 
 <script>
