@@ -9,7 +9,7 @@
       <router-link to="/">Go Back</router-link>
     </div>
     <div v-if="profileData">
-      <h1 class="gamertag">{{ profileData.platformInfo.platformUserId }}</h1>
+      <h1 class="gamertag">{{ profileData.segments[0].stats.damageDone.displayValue }}</h1>
     </div>
   </section>
 </template>
@@ -30,7 +30,7 @@
       this.loading = true;
       try {
         const res = await axios.get(
-          `/api/v1/profile/${this.$route.params.platform}/${this.$route.params.gamertag}`
+        `/api/v1/profile/${this.$route.params.platform}/` + encodeURIComponent(`${this.$route.params.gamertag}`)
         );
         this.profileData = res.data.data;
         console.log(this.profileData);

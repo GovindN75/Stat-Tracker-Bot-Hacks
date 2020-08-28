@@ -21,6 +21,17 @@
           placeholder="BattleNet ID, Xbox Live gamertag or PSN ID"
         />
       </div>
+      <div class="form-group mt-3">
+        <label for="battletag-code" style="color: #fff;">Battletag Code</label>
+        <input
+          disabled
+          type="number"
+          name="text"
+          id="battletag-code"
+          v-model="tagcode"
+          placeholder="BattleTag Code (the #XXXX following your username)"
+        />
+      </div>
       <div class="form-group mt-4">
         <button type="submit" class="btn btn-success">Submit</button>
       </div>
@@ -29,12 +40,14 @@
 </template>
 
 <script>
+  import jQuery from 'jquery';
   export default {
     name: "Search",
     data() {
       return {
         platform: "psn",
         gamertag: "",
+        tagcode: 0
       };
     },
     methods: {
@@ -46,10 +59,26 @@
             duration: 3000,
           });
         } else {
-          this.$router.push(`/profile/${this.platform}/${this.gamertag}`);
+          if (this.tagcode == 0 || this.tagcode == null) {
+            this.$router.push(`/profile/${this.platform}/${this.gamertag}`);
+          } else {
+            this.$router.push(`/profile/${this.platform}/${this.gamertag}%23${this.tagcode}`);
+          }
         }
       },
     },
+    mounted() {
+      jQuery(document).ready(function() {
+        jQuery("select#platform").change(function () {
+          var selected= jQuery(this).children("option:selected").val();
+          if (selected == "battlenet") {
+            jQuery("#battletag-code").prop('disabled', false);
+          } else {
+            jQuery("#battletag-code").prop('disabled', true);
+          }
+        });
+      });
+    }
   };
 </script>
 
