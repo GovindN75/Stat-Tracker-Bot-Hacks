@@ -18,7 +18,7 @@ router.get("/:platform/:gamertag", async (req, res) => {
         key,
       }
     );
-
+    // OMG ITS WORKING
     const data = await response.json();
     res.json(data);
   } catch (err) {
