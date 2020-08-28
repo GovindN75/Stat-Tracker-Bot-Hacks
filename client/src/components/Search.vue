@@ -1,7 +1,7 @@
 <template>
   <section class="search ml-auto mr-auto mt-5">
     <h1 style="color: #fff;">Track Your Stats!</h1>
-    <hr style="background-color: #fff;">
+    <hr style="background-color: #fff;" />
     <form v-on:submit.prevent="submit">
       <div class="form-group mt-1">
         <label for="platform" style="color: #fff;">Platform</label>
@@ -22,14 +22,35 @@
         />
       </div>
       <div class="form-group mt-4">
-        <button type="button" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button>
       </div>
     </form>
   </section>
 </template>
 
 <script>
-  export default {};
+  export default {
+    name: "Search",
+    data() {
+      return {
+        platform: "battlenet",
+        gamertag: "",
+      };
+    },
+    methods: {
+      submit() {
+        if (!this.gamertag) {
+          this.$toasted.show("Please enter a gamertag", {
+            theme: "bubble",
+            position: "top-center",
+            duration: 3000,
+          });
+        } else {
+          this.$router.push(`/profile/${this.platform}/${this.gamertag}`);
+        }
+      },
+    },
+  };
 </script>
 
 <style></style>
