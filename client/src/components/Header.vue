@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar">
       <a class="navbar-brand" href="#">
-        <img src="../assets/ow.png" style="width: 100px; height: 100px;" />
+        <img src="../assets/ow.png" style="width: 50px; height: 50px;" />
       </a>
     </nav>
   </header>
