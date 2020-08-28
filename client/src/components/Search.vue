@@ -42,7 +42,7 @@
         if (!this.gamertag) {
           this.$toasted.show("Please enter a gamertag", {
             theme: "bubble",
-            position: "top-center",
+            position: "bottom-center",
             duration: 3000,
           });
         } else {
