@@ -1,9 +1,9 @@
 <template>
   <section class="search">
-    <h1>Track Your Stats!</h1>
+    <h1 style="color: #fff;">Track Your Stats!</h1>
     <form>
       <div class="form-group">
-        <label for="platform">Platform</label>
+        <label for="platform" style="color: #fff;">Platform</label>
         <select name="platform" id="platform">
           <option value="psn">Playstation</option>
           <option value="xbl">Xbox</option>
@@ -11,13 +11,12 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="gamertag">Gamertag</label>
+        <label for="gamertag" style="color: #fff;">Gamertag</label>
         <input
           type="text"
           name="text"
-          v-model="gamertag"
           id="gamertag"
-          placeholder="BattleNet ID, Xbox Live gamertag, PSN ID, etc"
+          placeholder="BattleNet ID, Xbox Live gamertag or PSN ID"
         />
       </div>
       <div class="form-group">

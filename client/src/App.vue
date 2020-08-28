@@ -25,7 +25,6 @@
     background-repeat: no-repeat;
   }
   body {
-    background: var(--primary-color);
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
     line-height: 1.6;
@@ -48,7 +47,7 @@
     margin: 1rem 0;
   }
   .search {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     border: 4px #fff solid;
     margin-top: 1rem;
     padding: 2rem;
@@ -63,13 +62,13 @@
     border: 1px solid #ccc;
   }
   .btn {
-    display: inline-block;
-    background: black;
-    color: #fff;
-    padding: 0.4rem 1.3rem;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    margin-top: 1rem;
+    display: inline-block !important;
+    background-color: red !important;
+    color: #fff !important;
+    padding: 0.4rem 1.3rem !important;
+    border: 2px #fff solid !important;
+    cursor: pointer !important;
+    outline: none !important;
+    margin-top: 1rem !important;
   }
 </style>
