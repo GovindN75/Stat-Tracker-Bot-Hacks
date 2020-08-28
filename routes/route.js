@@ -37,3 +37,5 @@ router.get("/:platform/:gamertag", async (req, res) => {
 });
 
 module.exports = router;
+
+// omegalul
