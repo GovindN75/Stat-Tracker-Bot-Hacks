@@ -1,13 +1,15 @@
 const express = require("express");
 const dotenv = require("dotenv");
 
+// Load env
 dotenv.config({ path: "./config.env" });
 
 const app = express();
 
-const port = process.env.PORT || 5000;
+// Profile routes
+app.use("/api/v1/profile", require("./routes/route"));
 
-app.use("/api/profile", require("./routes/route"));
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
   console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`);
