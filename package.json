@@ -1,0 +1,24 @@
+{
+  "name": "stat-tracker-bot-hacks",
+  "version": "1.0.0",
+  "description": "Track Stats for Overwatch and maybe other games",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GovindN75/Stat-Tracker-Bot-Hacks.git"
+  },
+  "author": "Govind Nair, Ricky Lu, Daniel Wei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GovindN75/Stat-Tracker-Bot-Hacks/issues"
+  },
+  "homepage": "https://github.com/GovindN75/Stat-Tracker-Bot-Hacks#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0"
+  }
+}
