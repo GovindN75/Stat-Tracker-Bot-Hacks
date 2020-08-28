@@ -43,15 +43,19 @@
     overflow: auto;
     padding: 0 2rem;
   }
+
   .form-group {
     margin: 1rem 0;
   }
+
   .search {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.65);
+    width: 90%;
     border: 4px #fff solid;
     margin-top: 1rem;
     padding: 2rem;
   }
+
   input,
   select,
   textarea {
@@ -60,15 +64,5 @@
     padding: 0.4rem;
     font-size: 1.2rem;
     border: 1px solid #ccc;
-  }
-  .btn {
-    display: inline-block !important;
-    background-color: red !important;
-    color: #fff !important;
-    padding: 0.4rem 1.3rem !important;
-    border: 2px #fff solid !important;
-    cursor: pointer !important;
-    outline: none !important;
-    margin-top: 1rem !important;
   }
 </style>
