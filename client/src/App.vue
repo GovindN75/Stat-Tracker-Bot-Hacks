@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <nav-bar></nav-bar>
-    <div id="router-view">
-      <router-view />
-    </div>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/ow.png" style="width: 50px; height: 50px;" />
+      </a>
+    </nav>
   </div>
 </template>
 <script>
@@ -11,14 +12,4 @@
     name: "app",
   };
 </script>
-<style>
-  #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  #router-view {
-    padding: 20px 0px;
-    margin: 0 auto;
-  }
-</style>
+<style></style>
