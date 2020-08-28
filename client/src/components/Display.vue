@@ -1,15 +1,22 @@
 <template>
-  <div id="#app">
-    <div v-if="profileData">
-        <h1>
-            {{profileData.platformInfo.platformUserID}}
-        </h1>
+  <section>
+    <div v-if="loading">
+      <h3>Loading...</h3>
     </div>
-  </div>
+
+    <div v-if="error">
+      <h1>{{ error }}</h1>
+      <router-link to="/">Go Back</router-link>
+    </div>
+    <div v-if="profileData">
+      <h1 class="gamertag">{{ profileData.platformInfo.platformUserId }}</h1>
+    </div>
+  </section>
 </template>
 
 <script>
   import axios from "axios";
+
   export default {
     name: "display",
     data() {

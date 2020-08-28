@@ -6,9 +6,9 @@
       <div class="form-group mt-1">
         <label for="platform" style="color: #fff;">Platform</label>
         <select name="platform" id="platform" v-model="platform">
-          <option value="battlenet">Battle.net</option>
-          <option value="psn">Playstation</option>
-          <option value="xbl">Xbox</option>
+          <option value="battlenet">battlenet</option>
+          <option value="psn">psn</option>
+          <option value="xbl">xbl</option>
         </select>
       </div>
       <div class="form-group mt-3">
@@ -33,7 +33,7 @@
     name: "Search",
     data() {
       return {
-        platform: "battlenet",
+        platform: "psn",
         gamertag: "",
       };
     },
