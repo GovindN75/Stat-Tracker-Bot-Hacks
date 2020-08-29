@@ -36,82 +36,49 @@
     <div class="stats-wrapper">
       <div class="row">
         <div class="col-md-2">
-          <div class="row">
-            <div class="col-md-2">
-              <h4 class="stats-title">Time Played</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2">
-              <h5 class="stats-desc">{{profileData.segments[0].stats.timePlayed.displayValue}}</h5>
-            </div>
-          </div>
+          <h4 class="stats-title">Time Played</h4>
         </div>
         <div class="col-md-2">
-          <div class="row">
-            <div class="col-md-2">
-              <h4 class="stats-title">Win Loss %</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2">
-              <h5 class="stats-desc">{{profileData.segments[0].stats.wlPercentage.displayValue}}</h5>
-            </div>
-          </div>
+          <h4 class="stats-title">Win Rate</h4>
         </div>
         <div class="col-md-2">
-          <div class="row">
-            <div class="col-md-2">
-              <h4 class="stats-title">Time Spent on Fire</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2">
-              <h5
-                class="stats-desc"
-              >{{profileData.segments[0].stats.mostTimeSpentOnFire.displayValue}}</h5>
-            </div>
-          </div>
+          <h4 class="stats-title">Time Spent On Fire</h4>
         </div>
         <div class="col-md-2">
-          <div class="row">
-            <div class="col-md-2">
-              <h4 class="stats-title">Time On Objective</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2">
-              <h5
-                class="stats-desc"
-              >{{profileData.segments[0].stats.mostObjectiveTime.displayValue}}</h5>
-            </div>
-          </div>
+          <h4 class="stats-title">Time On Objective</h4>
         </div>
         <div class="col-md-2">
-          <div class="row">
-            <div class="col-md-2">
-              <h4 class="stats-title">Games Won</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2">
-              <h5
-                class="stats-desc"
-              >{{profileData.segments[0].stats.wins.value +profileData.segments[1].stats.wins.value }}</h5>
-            </div>
-          </div>
+          <h4 class="stats-title">Games Won</h4>
         </div>
         <div class="col-md-2">
-          <div class="row">
-            <div class="col-md-2">
-              <h4 class="stats-title">Highest Kill Streak</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2">
-              <h5 class="stats-desc">{{profileData.segments[0].stats.timePlayed.displayValue}}</h5>
-            </div>
-          </div>
+          <h4 class="stats-title">Most Eliminations</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <h5 class="stats-desc">{{}}</h5>
+        </div>
+        <div class="col-md-2">
+          <h5
+            class="stats-desc"
+          >{{ (profileData.segments[0].stats.wlPercentage.value + profileData.segments[1].stats.wlPercentage.value) / 2}}%</h5>
+        </div>
+        <div class="col-md-2">
+          <h5 class="stats-desc">{{profileData.segments[0].stats.timeSpentOnFire.displayValue}}</h5>
+        </div>
+        <div class="col-md-2">
+          <h5 class="stats-desc">{{profileData.segments[0].stats.mostObjectiveTime.displayValue}}</h5>
+        </div>
+        <div class="col-md-2">
+          <h5
+            class="stats-desc"
+          >{{profileData.segments[0].stats.wins.value + profileData.segments[1].stats.wins.value}}</h5>
+        </div>
+
+        <div class="col-md-2">
+          <h5
+            class="stats-desc"
+          >{{profileData.segments[0].stats.mostEliminations.value + profileData.segments[1].stats.mostEliminations.value}}</h5>
         </div>
       </div>
     </div>
@@ -152,6 +119,8 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%27");
+@import url("https://fonts.googleapis.com/css2?family=Teko&display=swap%27");
 .error {
   position: relative;
   margin-left: 30%;
@@ -175,7 +144,7 @@ export default {
 .stats-wrapper {
   background: rgba(0, 0, 0, 0.65);
   color: #fff;
-  width: 90%;
+  width: 95%;
   float: center;
   margin: 1rem auto;
   padding: 0.5rem 1.5rem -1.2rem;
@@ -187,22 +156,24 @@ export default {
   padding: 0.3rem 0.5rem;
   text-align: center;
   border-radius: 20px;
+  float: center;
   margin-top: 0.2rem;
   margin-left: 1.2rem;
   display: flex;
   align-items: center;
-  font-family: "Roboto", "Raleway", sans-serif;
+  font-family: "Teko", cursive;
 }
 .stats-desc {
   font-size: 1.3rem;
   padding: 0.3rem 1.8rem;
   text-align: center;
+  float: center;
   border-radius: 20px;
   margin-top: 0.2rem;
   margin-left: 0.3rem;
   display: flex;
   align-items: center;
-  font-family: "Roboto", "Raleway", sans-serif;
+  font-family: "Teko", cursive;
 }
 
 .gamertag {

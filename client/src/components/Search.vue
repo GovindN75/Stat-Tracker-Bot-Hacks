@@ -45,7 +45,7 @@ export default {
   name: "Search",
   data() {
     return {
-      platform: "battlenet",
+      platform: "psn",
       gamertag: "",
       tagcode: 0,
     };
