@@ -47,7 +47,7 @@ export default {
     return {
       platform: "psn",
       gamertag: "",
-      tagcode: 0,
+      tagcode: null,
     };
   },
   methods: {
@@ -59,7 +59,7 @@ export default {
           duration: 3000,
         });
       } else {
-        if (this.tagcode == 0 || this.tagcode == null) {
+        if (this.platform != "battlenet") {
           this.$router.push(`/profile/${this.platform}/${this.gamertag}`);
         } else {
           this.$router.push(
@@ -76,6 +76,7 @@ export default {
         if (selected == "battlenet") {
           jQuery("#battletag-code").prop("disabled", false);
         } else {
+          jQuery('#battletag-code').val(null);
           jQuery("#battletag-code").prop("disabled", true);
         }
       });
