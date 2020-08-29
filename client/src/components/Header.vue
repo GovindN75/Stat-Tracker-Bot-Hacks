@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <a class="navbar-brand" href="#">
-      <img src="../assets/owLogo.png" class="ml-2" style="width: 50px; height: 50px;" />
+      <img src="../assets/owLogo.png" class="ml-2" style="width: 69px; height: 69px;" />
     </a>
   </nav>
 </template>

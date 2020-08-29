@@ -260,84 +260,76 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6 col-sm-12 col-xs-12">
-          <div class="stats-wrapper ml-2 mr-2">
-            <h5 class="gamertag">Casual</h5>
+          <div class="stats-casual-content ml-2 mr-2">
+            <h5 class="w-100 pt-2" id="casual-title" style="text-align: center;">QUICKPLAY</h5>
+            <hr style="background-color: #9dacbf; height: 3px;">
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="stats-title">
+                <h3 class="bottom-stats-title">
                   Games Won:
                   <span class="stat-d">{{ profileData.segments[0].stats.wins.value }}</span>
                 </h3>
               </div>
             </div>
-            <hr style="background-color: #fff;" />
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="stats-title">Damage Dealt</h3>
+                <h3 class="bottom-stats-title">Damage Dealt</h3>
               </div>
             </div>
-            <hr style="background-color: #fff;" />
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="stats-title">KD</h3>
+                <h3 class="bottom-stats-title">KD</h3>
               </div>
             </div>
-            <hr style="background-color: #fff;" />
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="stats-title">Matches Played</h3>
+                <h3 class="bottom-stats-title">Matches Played</h3>
               </div>
             </div>
-            <hr style="background-color: #fff;" />
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="stats-title">Total Eliminations</h3>
+                <h3 class="bottom-stats-title">Total Eliminations</h3>
               </div>
             </div>
-            <hr style="background-color: #fff;" />
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="stats-title">Number of MultiKills</h3>
+                <h3 class="bottom-stats-title">Number of MultiKills</h3>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-sm-12 col-xs-12">
-          <div class="stats-wrapper">
-            <h5 class="gamertag">Competitive</h5>
+          <div class="stats-comp-content ml-2 mr-2">
+            <h5 class="w-100 pt-2" id="comp-title" style="text-align: center;">COMPETITIVE</h5>
+            <hr style="background-color: #9dacbf; height: 3px;">
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="stats-title">Games Won</h3>
+                <h3 class="bottom-stats-title">Games Won</h3>
               </div>
             </div>
-            <hr style="background-color: #fff;" />
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="stats-title">Damage Dealt</h3>
+                <h3 class="bottom-stats-title">Damage Dealt</h3>
               </div>
             </div>
-            <hr style="background-color: #fff;" />
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="stats-title">KD</h3>
+                <h3 class="bottom-stats-title">KD</h3>
               </div>
             </div>
-            <hr style="background-color: #fff;" />
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="stats-title">Matches Played</h3>
+                <h3 class="bottom-stats-title">Matches Played</h3>
               </div>
             </div>
-            <hr style="background-color: #fff;" />
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="stats-title">Total Eliminations</h3>
+                <h3 class="bottom-stats-title">Total Eliminations</h3>
               </div>
             </div>
-            <hr style="background-color: #fff;" />
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="stats-title">Number of MultiKills</h3>
+                <h3 class="bottom-stats-title">Number of MultiKills</h3>
               </div>
             </div>
           </div>
@@ -409,8 +401,8 @@ export default {
   margin-top: 15;
 }
 .stat-d {
-  font-family: "IBM Plex Serif", serif;
-  padding-left: 5%;
+  font-family: "Russo One", "sans-serif";
+  margin-left: 1.5rem;
 }
 
 #platform-logo {
@@ -443,11 +435,28 @@ export default {
   border-width: 3%;
 }
 
+.stats-casual-content, .stats-comp-content {
+  font-family: "Russo One", "sans-serif";
+  background: rgba(0, 0, 0, 0.65);
+  color: #cde1fa;
+  float: center;
+  border-style: solid;
+  border-color: #9dacbf;
+  border-width: 3%;
+}
+
 .stats-title {
   font-size: 1.5rem;
   text-align: center;
   border-radius: 20px;
   align-items: center;
+}
+
+.bottom-stats-title {
+  font-size: 1.5rem;
+  text-align: left;
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .stats-desc {
@@ -462,15 +471,21 @@ export default {
 
 .gamertag {
   color: #ff9100;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   padding: 0.3rem 0.5rem 0.3rem 1.5rem;
   text-align: center;
-  border-radius: 20px;
-  margin-top: 0.2rem;
   display: flex;
   align-items: center;
   font-family: "Russo One", sans-serif;
+  font-style: italic;
 }
+
+#casual-title, #comp-title {
+  font-family: "Russo One", "sans-serif";
+  font-size: 2.5rem;
+  text-align: center;
+}
+
 body {
   background-color: transparent;
   display: flex;
