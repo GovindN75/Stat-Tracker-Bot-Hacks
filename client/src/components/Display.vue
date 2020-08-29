@@ -27,7 +27,7 @@
     </div>
 
     <div v-if="profileData">
-      <div class="con">
+      <div class="container-fluid">
         <div class="row">
           <h1 class="gamertag">
             {{ profileData.platformInfo.platformUserId }}
@@ -49,29 +49,10 @@
           </h1>
         </div>
       </div>
-      <div class="stats-wrapper">
-        <div class="row">
+      <div class="container-fluid">
+        <div class="row stats-wrapper">
           <div class="col-md-2">
             <h4 class="stats-title">Time Played</h4>
-          </div>
-          <div class="col-md-2">
-            <h4 class="stats-title">Win Rate</h4>
-          </div>
-          <div class="col-md-2">
-            <h4 class="stats-title">Time Spent On Fire</h4>
-          </div>
-          <div class="col-md-2">
-            <h4 class="stats-title">Time On Objective</h4>
-          </div>
-          <div class="col-md-2">
-            <h4 class="stats-title">Games Won</h4>
-          </div>
-          <div class="col-md-2">
-            <h4 class="stats-title">Most Eliminations</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2">
             <h5
               v-if="
                 profileData.segments[0].stats.timePlayed.value &&
@@ -89,8 +70,8 @@
             ></h5>
             <h5 v-else></h5>
           </div>
-
           <div class="col-md-2">
+            <h4 class="stats-title">Win Rate</h4>
             <h5
               v-if="
                 profileData.segments[0].stats.wlPercentage.value &&
@@ -124,8 +105,8 @@
             </h5>
             <h5 v-else class="stats-desc">N/A</h5>
           </div>
-
           <div class="col-md-2">
+            <h4 class="stats-title">Time Spent On Fire</h4>
             <h5
               v-if="
                 profileData.segments[0].stats.timeSpentOnFire.value &&
@@ -166,8 +147,8 @@
             </h5>
             <h5 v-else class="stats-desc">N/A</h5>
           </div>
-
           <div class="col-md-2">
+            <h4 class="stats-title">Time On Objective</h4>
             <h5
               v-if="
                 profileData.segments[0].stats.mostObjectiveTime.value &&
@@ -221,8 +202,8 @@
             </h5>
             <h5 v-else class="stats-desc">N/A</h5>
           </div>
-
           <div class="col-md-2">
+            <h4 class="stats-title">Games Won</h4>
             <h5
               v-if="
                 profileData.segments[0].stats.wins.value &&
@@ -255,8 +236,8 @@
             </h5>
             <h5 v-else class="stats-desc">N/A</h5>
           </div>
-
           <div class="col-md-2">
+            <h4 class="stats-title">Most Eliminations</h4>
             <h5
               v-if="
                 profileData.segments[0].stats.mostEliminations.value &&
@@ -460,7 +441,6 @@
   .stats-wrapper {
     background: rgba(0, 0, 0, 0.65);
     color: #fff;
-
     float: center;
     margin: 1rem auto;
     padding: 0.5rem 1.5rem -1.2rem;
