@@ -20,10 +20,21 @@
   </div>
 
   <div v-if="error">
-    <h1 class="error">ERROR 404: {{ error }}</h1>
-    <button type="button" class="btn btn-secondary erbt">
-      <router-link to="/">Go Back</router-link>
-    </button>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4 error-box">
+          <h1 class="error" style="text-align: center;">
+            ERROR 404
+            <br />
+            {{ error }}
+          </h1>
+          <br />
+          <router-link class="erbt" style="align" to="/">Go Back</router-link>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div v-if="profileData">
@@ -549,14 +560,12 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@1,700&display=swap");
 .error {
   position: relative;
-  margin-left: 30%;
-  margin-top: 15%;
   font-family: "Raleway", sans-serif;
 }
 .erbt {
   position: relative;
-  margin-left: 45%;
-  margin-top: 15;
+  display: flex;
+  align-items: center;
 }
 
 .stat-d {
@@ -573,7 +582,16 @@ export default {
   color: #cde1fa;
   float: center;
 }
-
+.error-box {
+  font-family: "Russo One", "sans-serif";
+  background: rgba(0, 0, 0, 0.65);
+  color: #cde1fa;
+  float: left;
+  border-style: solid;
+  border-color: #9dacbf;
+  border-width: 3%;
+  margin-top: 15%;
+}
 .stats-top-title {
   font-family: "Russo One", "sans-serif";
   background: rgba(0, 0, 0, 0.65);
