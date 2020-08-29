@@ -64,12 +64,66 @@
             class="stats-desc"
           >{{convertTime(profileData.segments[0].stats.timePlayed.value + profileData.segments[1].stats.timePlayed.value)}}</h5>
           <h5
+            class="stats-desc"
             v-else-if="
                 profileData.segments[0].stats.timePlayed.value &&
                   !profileData.segments[1].stats.timePlayed.value
               "
           >{{convertTime(profileData.segments[0].stats.timePlayed.value)}}</h5>
-          <h5 v-else>{{convertTime(profileData.segments[1].stats.timePlayed.value)}}</h5>
+
+          <h5
+            class="stats-desc"
+            v-else
+          >{{convertTime(profileData.segments[1].stats.timePlayed.value)}}</h5>
+        </div>
+        <div class="col-md-2 mt-3">
+          <h4 class="stats-title">Total Time Spent On Fire</h4>
+          <h5
+            v-if="
+                profileData.segments[0].stats.timeSpentOnFire.value &&
+                  profileData.segments[1].stats.timeSpentOnFire.value
+              "
+            class="stats-desc"
+          >{{ convertTime(profileData.segments[0].stats.timeSpentOnFire.value+profileData.segments[1].stats.timeSpentOnFire.value) }}</h5>
+          <h5
+            class="stats-desc"
+            v-else-if="
+                !profileData.segments[0].stats.timeSpentOnFire.value &&
+                  profileData.segments[1].stats.timeSpentOnFire.value
+              "
+          >{{ convertTime(profileData.segments[1].stats.timeSpentOnFire.value) }}</h5>
+          <h5
+            class="stats-desc"
+            v-else-if="
+                profileData.segments[0].stats.timeSpentOnFire.value &&
+                  !profileData.segments[1].stats.timeSpentOnFire.value
+              "
+          >{{ convertTime(profileData.segments[0].stats.timeSpentOnFire.value) }}</h5>
+          <h5 v-else class="stats-desc">N/A</h5>
+        </div>
+        <div class="col-md-2 mt-3">
+          <h4 class="stats-title">Total Time On Objective</h4>
+          <h5
+            v-if="
+                profileData.segments[0].stats.objectiveTime.value &&
+                  profileData.segments[1].stats.objectiveTime.value "
+            class="stats-desc"
+          >{{ convertTime(profileData.segments[0].stats.objectiveTime.value+profileData.segments[1].stats.objectiveTime.value) }}</h5>
+          <h5
+            v-else-if="
+                profileData.segments[0].stats.objectiveTime.value &&
+                  !profileData.segments[1].stats.objectiveTime.value
+              "
+            class="stats-desc"
+          >{{ convertTime(profileData.segments[0].stats.objectiveTime.value) }}</h5>
+          <h5
+            v-else-if="
+                !profileData.segments[0].stats.objectiveTime.value &&
+                  profileData.segments[1].stats.objectiveTime.value
+              "
+            class="stats-desc"
+          >{{ convertTime(profileData.segments[1].stats.objectiveTime.value) }}</h5>
+          <h5 v-else class="stats-desc">N/A</h5>
         </div>
         <div class="col-md-2 mt-3">
           <h4 class="stats-title">Win Rate</h4>
@@ -100,85 +154,6 @@
               "
             class="stats-desc"
           >{{ profileData.segments[1].stats.wlPercentage.value }}%</h5>
-          <h5 v-else class="stats-desc">N/A</h5>
-        </div>
-        <div class="col-md-2 mt-3">
-          <h4 class="stats-title">Time Spent On Fire</h4>
-          <h5
-            v-if="
-                profileData.segments[0].stats.timeSpentOnFire.value &&
-                  profileData.segments[1].stats.timeSpentOnFire.value &&
-                  profileData.segments[0].stats.timeSpentOnFire.value >
-                    profileData.segments[1].stats.timeSpentOnFire.value
-              "
-            class="stats-desc"
-          >{{ profileData.segments[0].stats.timeSpentOnFire.displayValue }}</h5>
-          <h5
-            v-else-if="
-                profileData.segments[0].stats.timeSpentOnFire.value &&
-                  profileData.segments[1].stats.timeSpentOnFire.value &&
-                  profileData.segments[0].stats.timeSpentOnFire.value <
-                    profileData.segments[1].stats.timeSpentOnFire.value
-              "
-            class="stats-desc"
-          >{{ profileData.segments[1].stats.timeSpentOnFire.displayValue }}</h5>
-          <h5
-            v-else-if="
-                !profileData.segments[0].stats.timeSpentOnFire.value &&
-                  profileData.segments[1].stats.timeSpentOnFire.value
-              "
-          >{{ profileData.segments[1].stats.timeSpentOnFire.value }}</h5>
-          <h5
-            v-else-if="
-                profileData.segments[0].stats.timeSpentOnFire.value &&
-                  !profileData.segments[1].stats.timeSpentOnFire.value
-              "
-          >{{ profileData.segments[0].stats.timeSpentOnFire.value }}</h5>
-          <h5 v-else class="stats-desc">N/A</h5>
-        </div>
-        <div class="col-md-2 mt-3">
-          <h4 class="stats-title">Time On Objective</h4>
-          <h5
-            v-if="
-                profileData.segments[0].stats.mostObjectiveTime.value &&
-                  profileData.segments[1].stats.mostObjectiveTime.value &&
-                  profileData.segments[0].stats.mostObjectiveTime.value >
-                    profileData.segments[1].stats.mostObjectiveTime.value
-              "
-            class="stats-desc"
-          >{{ profileData.segments[0].stats.mostObjectiveTime.displayValue }}</h5>
-          <h5
-            v-else-if="
-                profileData.segments[0].stats.mostObjectiveTime.value &&
-                  profileData.segments[1].stats.mostObjectiveTime.value &&
-                  profileData.segments[0].stats.mostObjectiveTime.value <
-                    profileData.segments[1].stats.mostObjectiveTime.value
-              "
-            class="stats-desc"
-          >{{ profileData.segments[1].stats.mostObjectiveTime.displayValue }}</h5>
-          <h5
-            v-else-if="
-                profileData.segments[0].stats.mostObjectiveTime.value &&
-                  profileData.segments[1].stats.mostObjectiveTime.value &&
-                  profileData.segments[0].stats.mostObjectiveTime.value ===
-                    profileData.segments[1].stats.mostObjectiveTime.value
-              "
-            class="stats-desc"
-          >{{ profileData.segments[0].stats.mostObjectiveTime.displayValue }}</h5>
-          <h5
-            v-else-if="
-                profileData.segments[0].stats.mostObjectiveTime.value &&
-                  !profileData.segments[1].stats.mostObjectiveTime.value
-              "
-            class="stats-desc"
-          >{{ profileData.segments[0].stats.mostObjectiveTime.displayValue }}</h5>
-          <h5
-            v-else-if="
-                !profileData.segments[0].stats.mostObjectiveTime.value &&
-                  profileData.segments[1].stats.mostObjectiveTime.value
-              "
-            class="stats-desc"
-          >{{ profileData.segments[1].stats.mostObjectiveTime.displayValue }}</h5>
           <h5 v-else class="stats-desc">N/A</h5>
         </div>
         <div class="col-md-2 mt-3">
@@ -262,80 +237,259 @@
         <div class="col-md-6 col-sm-12 col-xs-12">
           <div class="stats-casual-content ml-2 mr-2">
             <h5 class="w-100 pt-2" id="casual-title" style="text-align: center;">QUICKPLAY</h5>
-            <hr style="background-color: #9dacbf; height: 3px;">
-            <h5 class="w-100 text-center" style="font-size: 1.75rem;"><u>Overall</u></h5>
+            <hr style="background-color: #9dacbf; height: 3px;" />
+            <h5 class="w-100 text-center" style="font-size: 1.75rem;">
+              <u>Overall</u>
+            </h5>
             <div class="row">
               <div class="col-md-6 col-6">
                 <h3 class="bottom-stats-title">
-                  Games Won:
-                  <span class="stat-d">{{ profileData.segments[0].stats.wins.value }}</span>
+                  Win Rate:
+                  <span
+                    class="stat-d"
+                  >{{ profileData.segments[0].stats.wlPercentage.displayValue }}</span>
                 </h3>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="bottom-stats-title">Damage Dealt</h3>
+                <h3 class="bottom-stats-title">
+                  Eliminations:
+                  <span
+                    class="stat-d"
+                  >{{ profileData.segments[0].stats.eliminations.displayValue }}</span>
+                </h3>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="bottom-stats-title">KD</h3>
+                <h3 class="bottom-stats-title">
+                  Deaths:
+                  <span
+                    class="stat-d"
+                  >{{ profileData.segments[0].stats.deaths.displayValue }}</span>
+                </h3>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="bottom-stats-title">Matches Played</h3>
+                <h3 class="bottom-stats-title">
+                  K/D Ratio:
+                  <span
+                    class="stat-d"
+                  >{{ Math.round((profileData.segments[0].stats.kd.value + Number.EPSILON) * 100)/100}}</span>
+                </h3>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="bottom-stats-title">Total Eliminations</h3>
+                <h3 class="bottom-stats-title">
+                  Damage Done:
+                  <span
+                    class="stat-d"
+                  >{{profileData.segments[0].stats.damageDone.displayValue}}</span>
+                </h3>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="bottom-stats-title">Number of MultiKills</h3>
+                <h3 class="bottom-stats-title">
+                  Healing Done:
+                  <span
+                    class="stat-d"
+                  >{{profileData.segments[0].stats.healingDone.displayValue}}</span>
+                </h3>
               </div>
             </div>
-            <h5 class="w-100 text-center" style="font-size: 1.75rem;"><u>Bests</u></h5>
+            <div class="row">
+              <div class="col-md-6 col-6">
+                <h3 class="bottom-stats-title">
+                  Medals:
+                  <span
+                    class="stat-d"
+                  >{{profileData.segments[0].stats.goldMedals.displayValue}} G/{{profileData.segments[0].stats.silverMedals.displayValue}} S/{{profileData.segments[0].stats.bronzeMedals.displayValue}} B</span>
+                </h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-6">
+                <h3 class="bottom-stats-title">
+                  Cards:
+                  <span class="stat-d">{{profileData.segments[0].stats.cards.displayValue}}</span>
+                </h3>
+              </div>
+            </div>
+            <h5 class="w-100 text-center" style="font-size: 1.75rem;">
+              <u>Bests</u>
+              <div class="row">
+                <div class="col-md-6 col-6">
+                  <h3 class="bottom-stats-title">
+                    Solo Eliminations:
+                    <span
+                      class="stat-d"
+                    >{{profileData.segments[0].stats.mostSoloKills.displayValue}}</span>
+                  </h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-6">
+                  <h3 class="bottom-stats-title">
+                    Damage Done:
+                    <span
+                      class="stat-d"
+                    >{{profileData.segments[0].stats.mostDamageDone.displayValue}}</span>
+                  </h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-6">
+                  <h3 class="bottom-stats-title">
+                    Healing Done:
+                    <span
+                      class="stat-d"
+                    >{{profileData.segments[0].stats.mostHealingDone.displayValue}}</span>
+                  </h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-6">
+                  <h3 class="bottom-stats-title">
+                    Time Spent On Fire:
+                    <span
+                      class="stat-d"
+                    >{{profileData.segments[0].stats.mostTimeSpentOnFire.displayValue}}</span>
+                  </h3>
+                </div>
+              </div>
+            </h5>
           </div>
         </div>
         <div class="col-md-6 col-sm-12 col-xs-12">
           <div class="stats-comp-content ml-2 mr-2">
             <h5 class="w-100 pt-2" id="comp-title" style="text-align: center;">COMPETITIVE</h5>
-            <hr style="background-color: #9dacbf; height: 3px;">
-            <h5 class="w-100 text-center" style="font-size: 1.75rem;"><u>Overall</u></h5>
+            <hr style="background-color: #9dacbf; height: 3px;" />
+            <h5 class="w-100 text-center" style="font-size: 1.75rem;">
+              <u>Overall</u>
+            </h5>
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="bottom-stats-title">Games Won</h3>
+                <h3 class="bottom-stats-title">
+                  Win Rate:
+                  <span
+                    class="stat-d"
+                  >{{ profileData.segments[1].stats.wlPercentage.displayValue }}</span>
+                </h3>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="bottom-stats-title">Damage Dealt</h3>
+                <h3 class="bottom-stats-title">
+                  Eliminations:
+                  <span
+                    class="stat-d"
+                  >{{ profileData.segments[1].stats.eliminations.displayValue }}</span>
+                </h3>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="bottom-stats-title">KD</h3>
+                <h3 class="bottom-stats-title">
+                  Deaths:
+                  <span
+                    class="stat-d"
+                  >{{ profileData.segments[1].stats.deaths.displayValue }}</span>
+                </h3>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="bottom-stats-title">Matches Played</h3>
+                <h3 class="bottom-stats-title">
+                  K/D Ratio:
+                  <span class="stat-d">{{ profileData.segments[1].stats.kd.displayValue }}</span>
+                </h3>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="bottom-stats-title">Total Eliminations</h3>
+                <h3 class="bottom-stats-title">
+                  Damage Done:
+                  <span
+                    class="stat-d"
+                  >{{ profileData.segments[1].stats.damageDone.displayValue }}</span>
+                </h3>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 col-6">
-                <h3 class="bottom-stats-title">Number of MultiKills</h3>
+                <h3 class="bottom-stats-title">
+                  Healing Done:
+                  <span
+                    class="stat-d"
+                  >{{ profileData.segments[1].stats.healingDone.displayValue }}</span>
+                </h3>
               </div>
             </div>
-            <h5 class="w-100 text-center" style="font-size: 1.75rem;"><u>Bests</u></h5>
+            <div class="row">
+              <div class="col-md-6 col-6">
+                <h3 class="bottom-stats-title">
+                  Medals:
+                  <span
+                    class="stat-d"
+                  >{{profileData.segments[1].stats.goldMedals.displayValue}} G/{{profileData.segments[1].stats.silverMedals.displayValue}} S/{{profileData.segments[1].stats.bronzeMedals.displayValue}} B</span>
+                </h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-6">
+                <h3 class="bottom-stats-title">
+                  Cards:
+                  <span class="stat-d">{{profileData.segments[1].stats.cards.displayValue}}</span>
+                </h3>
+              </div>
+            </div>
+            <h5 class="w-100 text-center" style="font-size: 1.75rem;">
+              <u>Bests</u>
+              <div class="row">
+                <div class="col-md-6 col-6">
+                  <h3 class="bottom-stats-title">
+                    Solo Eliminations:
+                    <span
+                      class="stat-d"
+                    >{{profileData.segments[1].stats.mostSoloKills.displayValue}}</span>
+                  </h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-6">
+                  <h3 class="bottom-stats-title">
+                    Damage Done:
+                    <span
+                      class="stat-d"
+                    >{{profileData.segments[1].stats.mostDamageDone.displayValue}}</span>
+                  </h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-6">
+                  <h3 class="bottom-stats-title">
+                    Healing Done:
+                    <span
+                      class="stat-d"
+                    >{{profileData.segments[1].stats.mostHealingDone.displayValue}}</span>
+                  </h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-6">
+                  <h3 class="bottom-stats-title">
+                    Time Spent On Fire:
+                    <span
+                      class="stat-d"
+                    >{{profileData.segments[1].stats.mostTimeSpentOnFire.displayValue}}</span>
+                  </h3>
+                </div>
+              </div>
+            </h5>
           </div>
         </div>
       </div>
@@ -440,7 +594,8 @@ export default {
   border-width: 3%;
 }
 
-.stats-casual-content, .stats-comp-content {
+.stats-casual-content,
+.stats-comp-content {
   font-family: "Russo One", "sans-serif";
   background: rgba(0, 0, 0, 0.65);
   color: #cde1fa;
@@ -485,7 +640,8 @@ export default {
   font-style: italic;
 }
 
-#casual-title, #comp-title {
+#casual-title,
+#comp-title {
   font-family: "Russo One", "sans-serif";
   font-size: 2.5rem;
   text-align: center;
