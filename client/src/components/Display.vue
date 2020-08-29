@@ -30,22 +30,10 @@
       <div class="con">
         <div class="row">
           <h1 class="gamertag">
-            {{ profileData.platformInfo.platformUserId }}
-            <i
-              class="fab fa-battle-net ml-3"
-              v-if="this.$route.params.platform == 'battlenet'"
-              style="color: blue;"
-            ></i>
-            <i
-              class="fab fa-xbox ml-3"
-              v-if="this.$route.params.platform == 'xbl'"
-              style="color: green;"
-            ></i>
-            <i
-              class="fab fa-playstation ml-3"
-              v-if="this.$route.params.platform == 'psn'"
-              style="color: blue;"
-            ></i>
+            {{ profileData.platformInfo.platformUserId}}
+            <i class="fab fa-battle-net ml-3" v-if="this.$route.params.platform == 'battlenet'" style="color: blue;"></i>
+            <i class="fab fa-xbox ml-3" v-if="this.$route.params.platform == 'xbl'" style="color: green;"></i>
+            <i class="fab fa-playstation ml-3" v-if="this.$route.params.platform == 'psn'" style="color: blue;"></i>
           </h1>
         </div>
       </div>
@@ -324,26 +312,31 @@
                       {{ profileData.segments[0].stats.wins.value }}</span
                     >
                   </h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Damage Dealt</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">KD</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Matches Played</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Total Eliminations</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
@@ -359,26 +352,31 @@
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Games Won</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Damage Dealt</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">KD</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Matches Played</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Total Eliminations</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
@@ -460,7 +458,7 @@
   .stats-wrapper {
     background: rgba(0, 0, 0, 0.65);
     color: #fff;
-
+    width: 95%;
     float: center;
     margin: 1rem auto;
     padding: 0.5rem 1.5rem -1.2rem;
