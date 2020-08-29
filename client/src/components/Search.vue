@@ -1,10 +1,10 @@
 <template>
   <section class="search ml-auto mr-auto mt-5">
-    <h1 style="color: #fff;">Track Your Stats!</h1>
-    <hr style="background-color: #fff;" />
+    <h1 class="search-title">Track Your Stats!</h1>
+    <hr style="background-color: ##cde1fa;" />
     <form v-on:submit.prevent="submit">
       <div class="form-group mt-1">
-        <label for="platform" style="color: #fff;">Platform</label>
+        <label for="platform" style="color: #cde1fa;">Platform</label>
         <select name="platform" id="platform" v-model="platform">
           <option value="battlenet">Battlenet</option>
           <option value="psn">Playstation</option>
@@ -12,7 +12,7 @@
         </select>
       </div>
       <div class="form-group mt-3">
-        <label for="gamertag" style="color: #fff;">Gamertag</label>
+        <label for="gamertag" style="color: #cde1fa;">Gamertag</label>
         <input
           type="text"
           name="text"
@@ -22,7 +22,7 @@
         />
       </div>
       <div class="form-group mt-3">
-        <label for="battletag-code" style="color: #fff;">Battletag Code</label>
+        <label for="battletag-code" style="color: #cde1fa;">Battletag Code</label>
         <input
           disabled
           type="number"
@@ -76,7 +76,7 @@ export default {
         if (selected == "battlenet") {
           jQuery("#battletag-code").prop("disabled", false);
         } else {
-          jQuery('#battletag-code').val(null);
+          jQuery("#battletag-code").val(null);
           jQuery("#battletag-code").prop("disabled", true);
         }
       });
@@ -85,4 +85,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+.search-title {
+  font-family: "Russo One", "sans-serif";
+  color: #cde1fa;
+}
+</style>
+
