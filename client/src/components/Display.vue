@@ -253,7 +253,7 @@
               <u>Overall</u>
             </h5>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Win Rate:
                   <span
@@ -263,7 +263,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Eliminations:
                   <span
@@ -273,7 +273,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Deaths:
                   <span
@@ -283,7 +283,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   K/D Ratio:
                   <span
@@ -293,7 +293,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Damage Done:
                   <span
@@ -303,7 +303,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Healing Done:
                   <span
@@ -313,7 +313,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Medals:
                   <span
@@ -323,7 +323,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Cards:
                   <span class="stat-d">{{profileData.segments[0].stats.cards.displayValue}}</span>
@@ -333,7 +333,7 @@
             <h5 class="w-100 text-center" style="font-size: 1.75rem;">
               <u>Bests</u>
               <div class="row">
-                <div class="col-md-6 col-6">
+                <div class="col-md-12 col-12">
                   <h3 class="bottom-stats-title">
                     Solo Eliminations:
                     <span
@@ -343,7 +343,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6 col-6">
+                <div class="col-md-12 col-12">
                   <h3 class="bottom-stats-title">
                     Damage Done:
                     <span
@@ -353,7 +353,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6 col-6">
+                <div class="col-md-12 col-12">
                   <h3 class="bottom-stats-title">
                     Healing Done:
                     <span
@@ -363,7 +363,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6 col-6">
+                <div class="col-md-12 col-12">
                   <h3 class="bottom-stats-title">
                     Time Spent On Fire:
                     <span
@@ -383,7 +383,7 @@
               <u>Overall</u>
             </h5>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Win Rate:
                   <span
@@ -393,7 +393,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Eliminations:
                   <span
@@ -403,7 +403,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Deaths:
                   <span
@@ -413,7 +413,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   K/D Ratio:
                   <span class="stat-d">{{ profileData.segments[1].stats.kd.displayValue }}</span>
@@ -421,7 +421,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Damage Done:
                   <span
@@ -431,7 +431,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Healing Done:
                   <span
@@ -441,7 +441,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Medals:
                   <span
@@ -451,7 +451,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-6">
+              <div class="col-md-12 col-12">
                 <h3 class="bottom-stats-title">
                   Cards:
                   <span class="stat-d">{{profileData.segments[1].stats.cards.displayValue}}</span>
@@ -461,7 +461,7 @@
             <h5 class="w-100 text-center" style="font-size: 1.75rem;">
               <u>Bests</u>
               <div class="row">
-                <div class="col-md-6 col-6">
+                <div class="col-md-12 col-12">
                   <h3 class="bottom-stats-title">
                     Solo Eliminations:
                     <span
@@ -471,7 +471,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6 col-6">
+                <div class="col-md-12 col-12">
                   <h3 class="bottom-stats-title">
                     Damage Done:
                     <span
@@ -481,7 +481,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6 col-6">
+                <div class="col-md-12 col-12">
                   <h3 class="bottom-stats-title">
                     Healing Done:
                     <span
@@ -491,7 +491,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6 col-6">
+                <div class="col-md-12 col-12">
                   <h3 class="bottom-stats-title">
                     Time Spent On Fire:
                     <span
