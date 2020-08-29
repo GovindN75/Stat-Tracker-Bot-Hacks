@@ -299,34 +299,44 @@
           </div>
         </div>
       </div>
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-md-6 col-sm-12 col-xs-12">
             <div class="stats-wrapper">
               <h5 class="gamertag">Casual</h5>
               <div class="row">
                 <div class="col-md-6 col-6">
-                  <h3 class="stats-title">Games Won</h3>
+                  <h3 class="stats-title">
+                    Games Won:
+                    <span class="stat-d">
+                      {{ profileData.segments[0].stats.wins.value }}</span
+                    >
+                  </h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Damage Dealt</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">KD</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Matches Played</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Total Eliminations</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
@@ -342,26 +352,31 @@
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Games Won</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Damage Dealt</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">KD</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Matches Played</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-6">
                   <h3 class="stats-title">Total Eliminations</h3>
+                  <hr style="background-color: #fff; width: 209.7%;" />
                 </div>
               </div>
               <div class="row">
@@ -412,6 +427,7 @@
   @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%27");
   @import url("https://fonts.googleapis.com/css2?family=Teko&display=swap%27");
   @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@1,700&display=swap");
   .error {
     position: relative;
     margin-left: 30%;
@@ -422,6 +438,10 @@
     position: relative;
     margin-left: 45%;
     margin-top: 15;
+  }
+  .stat-d {
+    font-family: "IBM Plex Serif", serif;
+    padding-left: 5%;
   }
   .con {
     color: #fff;
