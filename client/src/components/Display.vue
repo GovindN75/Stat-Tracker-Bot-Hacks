@@ -30,7 +30,7 @@
     <div class="con">
       <div class="row">
         <h1 class="gamertag">{{profileData.platformInfo.platformUserId}}</h1>
-        <h5 class="gamertag" style="font-size: 1.2em;">{{profileData.platformInfo.platformSlug}}</h5>
+        <img class="img-fluid platformLogo" src="../assets/battlenet.png">
       </div>
     </div>
     <div class="stats-wrapper">
@@ -155,6 +155,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%27");
 @import url("https://fonts.googleapis.com/css2?family=Teko&display=swap%27");
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 .error {
   position: relative;
   margin-left: 30%;
@@ -167,13 +168,18 @@ export default {
   margin-top: 15;
 }
 .con {
-  background: rgba(0, 0, 0, 0.65);
   color: #fff;
   width: 95%;
   float: center;
   margin: 1rem auto;
   padding: 0.5rem 1.5rem -1.2rem;
 }
+
+.platformLogo {
+  max-width: 3vw;
+  height: auto;
+}
+
 .stats-wrapper {
   background: rgba(0, 0, 0, 0.65);
   color: #fff;
@@ -216,7 +222,7 @@ export default {
   margin-top: 0.2rem;
   display: flex;
   align-items: center;
-  font-family: "Roboto", "Raleway", sans-serif;
+  font-family: "Russo One", sans-serif;
 }
 body {
   background-color: transparent;
