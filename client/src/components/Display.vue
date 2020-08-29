@@ -100,18 +100,66 @@
         </div>
 
         <div class="col-md-2">
-          <h5 class="stats-desc">{{profileData.segments[0].stats.mostObjectiveTime.displayValue}}</h5>
-        </div>
-        <div class="col-md-2">
           <h5
+            v-if="(profileData.segments[0].stats.mostObjectiveTime.value && profileData.segments[1].stats.mostObjectiveTime.value) && (profileData.segments[0].stats.mostObjectiveTime.value > profileData.segments[1].stats.mostObjectiveTime.value)"
             class="stats-desc"
-          >{{profileData.segments[0].stats.wins.value + profileData.segments[1].stats.wins.value}}</h5>
+          >{{profileData.segments[0].stats.mostObjectiveTime.displayValue}}</h5>
+          <h5
+            v-else-if="(profileData.segments[0].stats.mostObjectiveTime.value && profileData.segments[1].stats.mostObjectiveTime.value) && (profileData.segments[0].stats.mostObjectiveTime.value < profileData.segments[1].stats.mostObjectiveTime.value)"
+            class="stats-desc"
+          >{{profileData.segments[1].stats.mostObjectiveTime.displayValue}}</h5>
+          <h5
+            v-else-if="(profileData.segments[0].stats.mostObjectiveTime.value && profileData.segments[1].stats.mostObjectiveTime.value) && (profileData.segments[0].stats.mostObjectiveTime.value === profileData.segments[1].stats.mostObjectiveTime.value)"
+            class="stats-desc"
+          >{{profileData.segments[0].stats.mostObjectiveTime.displayValue}}</h5>
+          <h5
+            v-else-if="(profileData.segments[0].stats.mostObjectiveTime.value && !profileData.segments[1].stats.mostObjectiveTime.value)"
+            class="stats-desc"
+          >{{profileData.segments[0].stats.mostObjectiveTime.displayValue}}</h5>
+          <h5
+            v-else-if="(!profileData.segments[0].stats.mostObjectiveTime.value && profileData.segments[1].stats.mostObjectiveTime.value)"
+            class="stats-desc"
+          >{{profileData.segments[1].stats.mostObjectiveTime.displayValue}}</h5>
+          <h5 v-else class="stats-desc">N/A</h5>
         </div>
 
         <div class="col-md-2">
           <h5
+            v-if="profileData.segments[0].stats.wins.value && profileData.segments[1].stats.wins.value"
             class="stats-desc"
-          >{{profileData.segments[0].stats.mostEliminations.value + profileData.segments[1].stats.mostEliminations.value}}</h5>
+          >{{profileData.segments[0].stats.wins.value + profileData.segments[1].stats.wins.value}}</h5>
+          <h5
+            v-else-if="profileData.segments[0].stats.wins.value && !profileData.segments[1].stats.wins.value"
+            class="stats-desc"
+          >{{profileData.segments[0].stats.wins.value}}</h5>
+          <h5
+            v-else-if="!profileData.segments[0].stats.wins.value && profileData.segments[1].stats.wins.value"
+            class="stats-desc"
+          >{{profileData.segments[1].stats.wins.value}}</h5>
+          <h5 v-else class="stats-desc">N/A</h5>
+        </div>
+
+        <div class="col-md-2">
+          <h5
+            v-if="(profileData.segments[0].stats.mostEliminations.value && profileData.segments[1].stats.mostEliminations.value) && (profileData.segments[0].stats.mostEliminations.value > profileData.segments[1].stats.mostEliminations.value)"
+            class="stats-desc"
+          >{{profileData.segments[0].stats.mostEliminations.value}}</h5>
+          <h5
+            v-else-if="(profileData.segments[0].stats.mostEliminations.value && profileData.segments[1].stats.mostEliminations.value) && (profileData.segments[0].stats.mostEliminations.value < profileData.segments[1].stats.mostEliminations.value)"
+            class="stats-desc"
+          >{{profileData.segments[1].stats.mostEliminations.value}}</h5>
+          <h5
+            v-else-if="(profileData.segments[0].stats.mostEliminations.value && profileData.segments[1].stats.mostEliminations.value) && (profileData.segments[0].stats.mostEliminations.value === profileData.segments[1].stats.mostEliminations.value)"
+            class="stats-desc"
+          >{{profileData.segments[1].stats.mostEliminations.value}}</h5>
+          <h5
+            v-else-if="(profileData.segments[0].stats.mostEliminations.value && !profileData.segments[1].stats.mostEliminations.value)"
+            class="stats-desc"
+          >{{profileData.segments[0].stats.mostEliminations.value}}</h5>
+          <h5
+            v-else-if="(!profileData.segments[0].stats.mostEliminations.value && profileData.segments[1].stats.mostEliminations.value)"
+            class="stats-desc"
+          >{{profileData.segments[1].stats.mostEliminations.value}}</h5>
         </div>
       </div>
     </div>
@@ -154,7 +202,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%27");
 @import url("https://fonts.googleapis.com/css2?family=Teko&display=swap%27");
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 .error {
   position: relative;
   margin-left: 30%;
