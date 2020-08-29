@@ -56,16 +56,50 @@
       </div>
       <div class="row">
         <div class="col-md-2">
-          <h5 class="stats-desc">{{}}</h5>
+          <h5
+            v-if="profileData.segments[0].stats.timePlayed.value && profileData.segments[1].stats.timePlayed.value"
+            class="stats-desc"
+          >{{}}</h5>
+          <h5
+            v-else-if="profileData.segments[0].stats.timePlayed.value && !profileData.segments[1].stats.timePlayed.value"
+          ></h5>
+          <h5 v-else></h5>
         </div>
+
         <div class="col-md-2">
           <h5
+            v-if="profileData.segments[0].stats.wlPercentage.value && profileData.segments[1].stats.wlPercentage.value"
             class="stats-desc"
           >{{ (profileData.segments[0].stats.wlPercentage.value + profileData.segments[1].stats.wlPercentage.value) / 2}}%</h5>
+          <h5
+            v-else-if="profileData.segments[0].stats.wlPercentage.value && !profileData.segments[1].stats.wlPercentage.value"
+            class="stats-desc"
+          >{{profileData.segments[0].stats.wlPercentage.value}}%</h5>
+          <h5
+            v-else-if="!profileData.segments[0].stats.wlPercentage.value && profileData.segments[1].stats.wlPercentage.value"
+            class="stats-desc"
+          >{{profileData.segments[1].stats.wlPercentage.value}}%</h5>
+          <h5 v-else class="stats-desc">N/A</h5>
         </div>
+
         <div class="col-md-2">
-          <h5 class="stats-desc">{{profileData.segments[0].stats.timeSpentOnFire.displayValue}}</h5>
+          <h5
+            v-if="(profileData.segments[0].stats.timeSpentOnFire.value && profileData.segments[1].stats.timeSpentOnFire.value) && (profileData.segments[0].stats.timeSpentOnFire.value > profileData.segments[1].stats.timeSpentOnFire.value)"
+            class="stats-desc"
+          >{{profileData.segments[0].stats.timeSpentOnFire.displayValue}}</h5>
+          <h5
+            v-else-if="(profileData.segments[0].stats.timeSpentOnFire.value && profileData.segments[1].stats.timeSpentOnFire.value) && (profileData.segments[0].stats.timeSpentOnFire.value < profileData.segments[1].stats.timeSpentOnFire.value)"
+            class="stats-desc"
+          >{{profileData.segments[1].stats.timeSpentOnFire.displayValue}}</h5>
+          <h5
+            v-else-if="(!profileData.segments[0].stats.timeSpentOnFire.value && profileData.segments[1].stats.timeSpentOnFire.value)"
+          >{{profileData.segments[1].stats.timeSpentOnFire.value}}</h5>
+          <h5
+            v-else-if="(profileData.segments[0].stats.timeSpentOnFire.value && !profileData.segments[1].stats.timeSpentOnFire.value)"
+          >{{profileData.segments[0].stats.timeSpentOnFire.value}}</h5>
+          <h5 v-else class="stats-desc">N/A</h5>
         </div>
+
         <div class="col-md-2">
           <h5 class="stats-desc">{{profileData.segments[0].stats.mostObjectiveTime.displayValue}}</h5>
         </div>
@@ -139,7 +173,6 @@ export default {
   float: center;
   margin: 1rem auto;
   padding: 0.5rem 1.5rem -1.2rem;
-  border-radius: 20px;
 }
 .stats-wrapper {
   background: rgba(0, 0, 0, 0.65);
@@ -148,7 +181,6 @@ export default {
   float: center;
   margin: 1rem auto;
   padding: 0.5rem 1.5rem -1.2rem;
-  border-radius: 20px;
 }
 
 .stats-title {
