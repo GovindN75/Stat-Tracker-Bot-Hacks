@@ -263,6 +263,7 @@
           <div class="stats-casual-content ml-2 mr-2">
             <h5 class="w-100 pt-2" id="casual-title" style="text-align: center;">QUICKPLAY</h5>
             <hr style="background-color: #9dacbf; height: 3px;">
+            <h5 class="w-100 text-center" style="font-size: 1.75rem;"><u>Overall</u></h5>
             <div class="row">
               <div class="col-md-6 col-6">
                 <h3 class="bottom-stats-title">
@@ -296,12 +297,14 @@
                 <h3 class="bottom-stats-title">Number of MultiKills</h3>
               </div>
             </div>
+            <h5 class="w-100 text-center" style="font-size: 1.75rem;"><u>Bests</u></h5>
           </div>
         </div>
         <div class="col-md-6 col-sm-12 col-xs-12">
           <div class="stats-comp-content ml-2 mr-2">
             <h5 class="w-100 pt-2" id="comp-title" style="text-align: center;">COMPETITIVE</h5>
             <hr style="background-color: #9dacbf; height: 3px;">
+            <h5 class="w-100 text-center" style="font-size: 1.75rem;"><u>Overall</u></h5>
             <div class="row">
               <div class="col-md-6 col-6">
                 <h3 class="bottom-stats-title">Games Won</h3>
@@ -332,6 +335,7 @@
                 <h3 class="bottom-stats-title">Number of MultiKills</h3>
               </div>
             </div>
+            <h5 class="w-100 text-center" style="font-size: 1.75rem;"><u>Bests</u></h5>
           </div>
         </div>
       </div>
@@ -400,6 +404,7 @@ export default {
   margin-left: 45%;
   margin-top: 15;
 }
+
 .stat-d {
   font-family: "Russo One", "sans-serif";
   margin-left: 1.5rem;
