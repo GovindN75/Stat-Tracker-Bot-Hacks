@@ -29,8 +29,7 @@
   <div v-if="profileData">
     <div class="con">
       <div class="row">
-        <h1 class="gamertag">{{profileData.platformInfo.platformUserId}}</h1>
-        <img class="img-fluid platformLogo" src="../assets/battlenet.png">
+        <h1 class="gamertag">{{profileData.platformInfo.platformUserId}}<i class="fab fa-battle-net"></i></h1>
       </div>
     </div>
     <div class="stats-wrapper">
@@ -176,8 +175,7 @@ export default {
 }
 
 .platformLogo {
-  max-width: 3vw;
-  height: auto;
+  
 }
 
 .stats-wrapper {
