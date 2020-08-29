@@ -6,9 +6,9 @@
       <div class="form-group mt-1">
         <label for="platform" style="color: #fff;">Platform</label>
         <select name="platform" id="platform" v-model="platform">
-          <option value="battlenet">battlenet</option>
-          <option value="psn">psn</option>
-          <option value="xbl">xbl</option>
+          <option value="battlenet">Battlenet</option>
+          <option value="psn">Playstation</option>
+          <option value="xbl">Xbox</option>
         </select>
       </div>
       <div class="form-group mt-3">
@@ -40,46 +40,48 @@
 </template>
 
 <script>
-  import jQuery from 'jquery';
-  export default {
-    name: "Search",
-    data() {
-      return {
-        platform: "psn",
-        gamertag: "",
-        tagcode: 0
-      };
-    },
-    methods: {
-      submit() {
-        if (!this.gamertag) {
-          this.$toasted.show("Please enter a gamertag", {
-            theme: "bubble",
-            position: "bottom-center",
-            duration: 3000,
-          });
-        } else {
-          if (this.tagcode == 0 || this.tagcode == null) {
-            this.$router.push(`/profile/${this.platform}/${this.gamertag}`);
-          } else {
-            this.$router.push(`/profile/${this.platform}/${this.gamertag}%23${this.tagcode}`);
-          }
-        }
-      },
-    },
-    mounted() {
-      jQuery(document).ready(function() {
-        jQuery("select#platform").change(function () {
-          var selected= jQuery(this).children("option:selected").val();
-          if (selected == "battlenet") {
-            jQuery("#battletag-code").prop('disabled', false);
-          } else {
-            jQuery("#battletag-code").prop('disabled', true);
-          }
+import jQuery from "jquery";
+export default {
+  name: "Search",
+  data() {
+    return {
+      platform: "battlenet",
+      gamertag: "",
+      tagcode: 0,
+    };
+  },
+  methods: {
+    submit() {
+      if (!this.gamertag) {
+        this.$toasted.show("Please enter a gamertag", {
+          theme: "bubble",
+          position: "bottom-center",
+          duration: 3000,
         });
+      } else {
+        if (this.tagcode == 0 || this.tagcode == null) {
+          this.$router.push(`/profile/${this.platform}/${this.gamertag}`);
+        } else {
+          this.$router.push(
+            `/profile/${this.platform}/${this.gamertag}%23${this.tagcode}`
+          );
+        }
+      }
+    },
+  },
+  mounted() {
+    jQuery(document).ready(function () {
+      jQuery("select#platform").change(function () {
+        var selected = jQuery(this).children("option:selected").val();
+        if (selected == "battlenet") {
+          jQuery("#battletag-code").prop("disabled", false);
+        } else {
+          jQuery("#battletag-code").prop("disabled", true);
+        }
       });
-    }
-  };
+    });
+  },
+};
 </script>
 
 <style></style>
