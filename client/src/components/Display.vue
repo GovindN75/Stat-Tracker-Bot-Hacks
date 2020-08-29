@@ -30,8 +30,10 @@
       <div class="con">
         <div class="row">
           <h1 class="gamertag">
-            {{ profileData.platformInfo.platformUserId
-            }}<i class="fab fa-battle-net"></i>
+            {{ profileData.platformInfo.platformUserId}}
+            <i class="fab fa-battle-net ml-3" v-if="this.$route.params.platform == 'battlenet'" style="color: blue;"></i>
+            <i class="fab fa-xbox ml-3" v-if="this.$route.params.platform == 'xbl'" style="color: green;"></i>
+            <i class="fab fa-playstation ml-3" v-if="this.$route.params.platform == 'psn'" style="color: blue;"></i>
           </h1>
         </div>
       </div>
@@ -377,7 +379,6 @@
 
 <script>
   import axios from "axios";
-
   export default {
     name: "display",
     data() {
@@ -430,9 +431,8 @@
     padding: 0.5rem 1.5rem -1.2rem;
   }
 
-  .platformLogo {
-    max-width: 3vw;
-    height: auto;
+  #platform-logo {
+    color: blue;
   }
 
   .stats-wrapper {
