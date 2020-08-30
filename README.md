@@ -14,6 +14,15 @@ These are the stats the player has achieved in the respective game modes. Some o
 ![Quickplay Stats](https://user-images.githubusercontent.com/54968551/91649750-24d80000-ea45-11ea-8324-c4971151107a.PNG)
 ![Competitive Stats](https://user-images.githubusercontent.com/54968551/91649747-243f6980-ea45-11ea-8a8e-01e058cc3963.PNG)
 
+## To Run The App
+After navigating to the project's directory you must run: 
+### npm install
+This installs the dependencies the project uses. Then, run: 
+### npm run dev
+This runs the front end and the backend concurrently and you will be able to test the app. You will be given a link in the terminal and by navigating to that link in your <br/>
+browser, you can view the app. 
+
+
 
 
 
