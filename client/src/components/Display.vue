@@ -318,7 +318,7 @@
                   Medals:
                   <span
                     class="stat-d"
-                  >{{profileData.segments[0].stats.goldMedals.displayValue}} G/{{profileData.segments[0].stats.silverMedals.displayValue}} S/{{profileData.segments[0].stats.bronzeMedals.displayValue}} B</span>
+                  ><span style="color: 	#FFDF00;">{{profileData.segments[0].stats.goldMedals.displayValue}} G</span> / <span style="color: #C0C0C0;">{{profileData.segments[0].stats.silverMedals.displayValue}} S</span> / <span style="color: #cd7f32">{{profileData.segments[0].stats.bronzeMedals.displayValue}} B</span></span>
                 </h3>
               </div>
             </div>
@@ -446,7 +446,7 @@
                   Medals:
                   <span
                     class="stat-d"
-                  >{{profileData.segments[1].stats.goldMedals.displayValue}} G/{{profileData.segments[1].stats.silverMedals.displayValue}} S/{{profileData.segments[1].stats.bronzeMedals.displayValue}} B</span>
+                  ><span style="color: 	#FFDF00;">{{profileData.segments[1].stats.goldMedals.displayValue}} G</span> / <span style="color: #C0C0C0;">{{profileData.segments[1].stats.silverMedals.displayValue}} S</span> / <span style="color: #cd7f32">{{profileData.segments[1].stats.bronzeMedals.displayValue}} B</span></span>
                 </h3>
               </div>
             </div>
