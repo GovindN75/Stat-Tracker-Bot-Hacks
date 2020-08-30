@@ -16,9 +16,9 @@ These are the stats the player has achieved in the respective game modes. Some o
 
 ## To Run The App
 After navigating to the project's directory you must run: 
-### npm install
+### `npm install`
 This installs the dependencies the project uses. Then, run: 
-### npm run dev
+### `npm run dev`
 This runs the front end and the backend concurrently and you will be able to test the app. You will be given a link in the terminal and by navigating to that link in your <br/>
 browser, you can view the app. 
 
