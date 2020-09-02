@@ -15,6 +15,7 @@ These are the stats the player has achieved in the respective game modes. Some o
 ![Competitive Stats](https://user-images.githubusercontent.com/54968551/91649747-243f6980-ea45-11ea-8a8e-01e058cc3963.PNG)
 
 ## To Run The App
+You need to first go to the (tracker.gg) website and sign up for an API Key. Then, you need to go to the config.env file and update the TRACKER_API_KEY variable.
 After navigating to the project's directory you must run: 
 ### `npm install`
 This installs the dependencies the project uses. Then, run: 
